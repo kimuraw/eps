@@ -4,6 +4,9 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 . "$here\..\EPS\New-EpsTemplateScript.ps1"
 . "$here\..\EPS\Invoke-EpsTemplate.ps1"
 
+# suppress localized exception messages
+[Threading.Thread]::CurrentThread.CurrentUICulture = 'en-US'
+
 function EpsTests {
 	Param([switch]$WithSafe)
 	
